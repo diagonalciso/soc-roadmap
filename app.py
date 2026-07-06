@@ -81,7 +81,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roadmap</title>
+  <title>Soc-Roadmap — Service Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -309,7 +309,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
       <div class="brand">
         <span class="logo-mark">◆</span>
         <div class="brand-text">
-          <div class="brand-name">Roadmap</div>
+          <div class="brand-name">Soc-Roadmap</div>
           <div class="brand-tag">ROADMAP DASHBOARD · LIVE</div>
         </div>
       </div>
