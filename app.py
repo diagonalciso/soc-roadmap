@@ -87,22 +87,22 @@ class DashboardHandler(BaseHTTPRequestHandler):
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {{
-      --bg:       #050810;
-      --bg-soft:  #080d1a;
-      --panel:    rgba(10,18,32,0.85);
-      --panel-bd: rgba(0,255,136,0.22);
-      --panel-bd2:rgba(0,204,255,0.18);
-      --grid-ln:  rgba(0,255,136,0.06);
-      --text:     #c8d6e0;
-      --text-dim: #6c8090;
-      --accent:   #00ff88;
-      --accent-2: #00ccff;
-      --accent-3: #ff5ec4;
-      --warn:     #ffb000;
-      --crit:     #ff3860;
-      --ok:       #00ff88;
-      --offline:  #5a6878;
-      --shadow:   0 0 18px rgba(0,255,136,0.10), inset 0 0 24px rgba(0,200,255,0.04);
+      --bg:       #0d1117;
+      --bg-soft:  #161b22;
+      --panel:    rgba(22,27,34,0.9);
+      --panel-bd: rgba(88,166,255,0.22);
+      --panel-bd2:rgba(56,139,253,0.18);
+      --grid-ln:  rgba(88,166,255,0.06);
+      --text:     #e6edf3;
+      --text-dim: #8b949e;
+      --accent:   #58a6ff;
+      --accent-2: #388bfd;
+      --accent-3: #bc8cff;
+      --warn:     #d29922;
+      --crit:     #f85149;
+      --ok:       #3fb950;
+      --offline:  #6e7681;
+      --shadow:   0 0 18px rgba(88,166,255,0.10), inset 0 0 24px rgba(56,139,253,0.04);
       --mono:     'JetBrains Mono', ui-monospace, monospace;
       --display:  'Orbitron', 'JetBrains Mono', sans-serif;
     }}
@@ -113,9 +113,9 @@ class DashboardHandler(BaseHTTPRequestHandler):
     }}
     body{{
       background:
-        radial-gradient(circle 800px at 12% 8%,  rgba(0,200,255,0.10),transparent 60%),
-        radial-gradient(circle 700px at 88% 12%, rgba(255,94,196,0.06), transparent 60%),
-        radial-gradient(circle 900px at 50% 100%,rgba(0,255,136,0.06), transparent 60%),
+        radial-gradient(circle 800px at 12% 8%,  rgba(56,139,253,0.10),transparent 60%),
+        radial-gradient(circle 700px at 88% 12%, rgba(188,140,255,0.06), transparent 60%),
+        radial-gradient(circle 900px at 50% 100%,rgba(88,166,255,0.06), transparent 60%),
         var(--bg);
       background-attachment:fixed; position:relative;
     }}
@@ -129,7 +129,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
     }}
     body::after{{
       content:''; position:fixed; inset:0;
-      background:linear-gradient(rgba(0,255,136,0.025) 50%,transparent 50%);
+      background:linear-gradient(rgba(88,166,255,0.025) 50%,transparent 50%);
       background-size:100% 4px; pointer-events:none; z-index:1;
       opacity:0.35; mix-blend-mode:overlay;
     }}
@@ -144,9 +144,9 @@ class DashboardHandler(BaseHTTPRequestHandler):
     .boot-text{{
       font-family:var(--display); font-weight:800; letter-spacing:4px;
       color:var(--accent); font-size:1.05rem; margin-bottom:18px;
-      text-shadow:0 0 18px rgba(0,255,136,0.6);
+      text-shadow:0 0 18px rgba(88,166,255,0.6);
     }}
-    .boot-bar{{ width:320px; height:3px; background:rgba(0,255,136,0.12); overflow:hidden; border-radius:1px; }}
+    .boot-bar{{ width:320px; height:3px; background:rgba(88,166,255,0.12); overflow:hidden; border-radius:1px; }}
     .boot-fill{{
       width:0%; height:100%;
       background:linear-gradient(90deg,var(--accent),var(--accent-2));
@@ -174,7 +174,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
     @keyframes logoSpin{{ to{{ transform:rotate(360deg); }} }}
     .brand-name{{
       font-family:var(--display); font-weight:900; letter-spacing:3px;
-      color:var(--accent); text-shadow:0 0 8px rgba(0,255,136,0.5);
+      color:var(--accent); text-shadow:0 0 8px rgba(88,166,255,0.5);
       font-size:1.15rem; line-height:1;
     }}
     .brand-tag{{ color:var(--text-dim); font-size:0.65rem; letter-spacing:2px; margin-top:2px; }}
@@ -183,7 +183,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
     .clock-time{{
       font-family:var(--display); font-weight:800; color:var(--accent-2);
       font-size:1.4rem; letter-spacing:3px;
-      text-shadow:0 0 8px rgba(0,204,255,0.5); line-height:1;
+      text-shadow:0 0 8px rgba(56,139,253,0.5); line-height:1;
     }}
     .clock-date{{ color:var(--text-dim); font-size:0.6rem; letter-spacing:2px; margin-top:4px; }}
     .services{{ display:flex; flex-wrap:wrap; gap:6px; }}
@@ -194,7 +194,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
       border:1px solid var(--panel-bd2); border-radius:2px;
       transition:all 0.2s; background:rgba(0,0,0,0.25);
     }}
-    .svc:hover{{ border-color:var(--accent); color:var(--accent); box-shadow:0 0 10px rgba(0,255,136,0.4); transform:translateY(-1px); }}
+    .svc:hover{{ border-color:var(--accent); color:var(--accent); box-shadow:0 0 10px rgba(88,166,255,0.4); transform:translateY(-1px); }}
     .svc .dot{{ width:7px; height:7px; border-radius:50%; background:var(--offline); box-shadow:0 0 4px var(--offline); }}
     .svc.up .dot{{ background:var(--ok); box-shadow:0 0 8px var(--ok); }}
     .svc.down .dot{{ background:var(--crit); box-shadow:0 0 8px var(--crit); animation:dotPulse 1.4s ease-in-out infinite; }}
@@ -223,7 +223,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
       overflow:hidden; backdrop-filter:blur(4px); box-shadow:var(--shadow);
       transition:border-color 0.2s, box-shadow 0.2s;
     }}
-    .panel:hover{{ border-color:var(--accent); box-shadow:0 0 24px rgba(0,255,136,0.18); }}
+    .panel:hover{{ border-color:var(--accent); box-shadow:0 0 24px rgba(88,166,255,0.18); }}
     .panel::before{{
       content:''; position:absolute; top:0; left:0; right:0; height:1px;
       background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:0.7;
@@ -231,7 +231,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
     .panel-head{{
       display:flex; justify-content:space-between; align-items:center;
       padding:8px 12px; border-bottom:1px solid var(--panel-bd);
-      background:linear-gradient(180deg,rgba(0,255,136,0.04),transparent); flex-shrink:0;
+      background:linear-gradient(180deg,rgba(88,166,255,0.04),transparent); flex-shrink:0;
     }}
     .panel-title{{
       font-family:var(--display); font-weight:600; font-size:0.7rem;
@@ -257,7 +257,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
     }}
     .stat-num{{
       font-family:var(--display); font-weight:800; font-size:1.3rem;
-      color:var(--accent); text-shadow:0 0 6px rgba(0,255,136,0.4);
+      color:var(--accent); text-shadow:0 0 6px rgba(88,166,255,0.4);
     }}
     .stat-cap{{ font-size:0.55rem; color:var(--text-dim); letter-spacing:2px; margin-top:2px; }}
 
@@ -270,7 +270,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
       transition:all 0.2s; font-family:var(--mono); margin-top:auto;
       align-self:flex-start;
     }}
-    .open-btn:hover{{ box-shadow:0 0 12px rgba(0,255,136,0.6); transform:translateY(-1px); }}
+    .open-btn:hover{{ box-shadow:0 0 12px rgba(88,166,255,0.6); transform:translateY(-1px); }}
 
     /* Quick links */
     .quick-links{{
@@ -295,7 +295,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
     ::-webkit-scrollbar{{ width:6px; }}
     ::-webkit-scrollbar-track{{ background:transparent; }}
-    ::-webkit-scrollbar-thumb{{ background:rgba(0,255,136,0.25); border-radius:3px; }}
+    ::-webkit-scrollbar-thumb{{ background:rgba(88,166,255,0.25); border-radius:3px; }}
   </style>
 </head>
 <body>
