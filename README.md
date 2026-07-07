@@ -49,3 +49,8 @@ Python 3.8+ stdlib only.
 - Stats fetched from each service `/api/stats` endpoint
 - Requires all 5 services running (graceful fallback if offline)
 - Shows last update timestamp for each service
+
+
+## Documentation
+
+See **[MANUAL.md](MANUAL.md)** for the full manual (overview, configuration, endpoints, integration, troubleshooting). In the running dashboard, click the **`?` Help button** in the top-right corner to open it at `/manual`.
