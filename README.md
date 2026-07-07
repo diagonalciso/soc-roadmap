@@ -5,7 +5,7 @@ Unified portal for all 8 SOC platform tools. Aggregates stats from 5 standalone 
 ## Quick Start
 
 ```bash
-cd roadmap-dashboard
+cd soc-roadmap
 cp .env.example .env
 python3 app.py
 ```
