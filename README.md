@@ -1,5 +1,7 @@
 # Roadmap Dashboard
 
+> Unified SOC tools portal
+
 Unified portal for all 8 SOC platform tools. Aggregates stats from 5 standalone services + 2 embedded extensions.
 
 ## Quick Start
