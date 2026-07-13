@@ -2,6 +2,11 @@
 
 > Unified SOC tools portal
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="soc-roadmap dashboard screenshot" width="100%">
+</p>
+
+
 Unified portal for all 8 SOC platform tools. Aggregates stats from 5 standalone services + 2 embedded extensions.
 
 ## Quick Start
